@@ -2,23 +2,17 @@
 //  ContentView.swift
 //  vocalclip
 //
-//  Created by haomiaotang on 2026/5/18.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        MainView()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(SettingsStore())
+        .environmentObject(ReadingManager(settingsStore: SettingsStore()))
 }
